@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output" class="output"></div>
+    <script>
+        function number2() {
+            let num;
+            do {
+                num = prompt("Please enter a number:");
+            } while (isNaN(num) || num.trim() === '');
+            return parseInt(num, 10);
+        }
+
+        function makeshape(num) {
+            let output = 'Number inputted: '+ num + '<br><br>';
+            if (num % 2 === 1) {
+                for (let i = num; i >= 1; i--) {
+                    for (let j = 0; j < num; j++) {
+                        output += i + ' ';
+                    }
+                    output += '<br>';
+                }
+            } else {
+                for (let i = num; i >= 1; i--) {
+                    for (let j = 0; j < i; j++) {
+                        output += i + ' ';
+                    }
+                    output += '<br>';
+                }
+            }
+            return output;
+        }
+
+        document.getElementById('output').innerHTML = makeshape(number2());
+    </script>
+    </script>
+</body>
+</html>
